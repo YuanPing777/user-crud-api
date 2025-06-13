@@ -22,6 +22,17 @@ cd user-crud-api
 composer install
 cp .env.example .env
 php artisan key:generate
+
+-----------------
+update .env
+-----------------
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=user_management
+DB_USERNAME=root
+DB_PASSWORD=
+
 php artisan migrate
 php artisan serve
 
