@@ -18,6 +18,7 @@ A full-featured user management system with both web UI and RESTful API.
 
 ```bash
 git clone ...
+cd user-crud-api
 composer install
 cp .env.example .env
 php artisan key:generate
