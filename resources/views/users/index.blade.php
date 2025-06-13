@@ -23,6 +23,7 @@
         </div>
         <div class="col-md-3 text-end">
             <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
+            <a href="{{ route('users.export', request()->query()) }}" class="btn btn-outline-secondary">Export</a>
         </div>
     </form>
 

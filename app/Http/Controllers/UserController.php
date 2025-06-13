@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersExport;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -96,5 +98,12 @@ class UserController extends Controller
         User::whereIn('id', $ids)->delete();
 
         return redirect()->route('users.index')->with('success', 'Selected users deleted successfully.');
+    }
+
+    public function export(Request $request)
+    {
+        $status = $request->query('status');
+
+        return Excel::download(new UsersExport($status), 'users.xlsx');
     }
 }

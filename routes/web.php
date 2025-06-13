@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn () => redirect()->route('users.index'));
 
 Route::prefix('users')->name('users.')->controller(UserController::class)->group(function () {
+    Route::get('export', 'export')->name('export');
     Route::get('/', 'index')->name('index');
     Route::post('/', 'store')->name('store');
     Route::get('create', 'create')->name('create');
