@@ -42,3 +42,6 @@ Visit /api/documentation for Swagger UI.
 ## Testing
 php artisan test tests/Feature/UserApiTest.php
 
+## Package used
+maatwebsite/excel
+

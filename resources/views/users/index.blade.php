@@ -10,6 +10,12 @@
         </div>
     @endif
 
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <form method="GET" action="{{ route('users.index') }}" class="row g-2 mb-4">
         <div class="col-md-3">
             <select name="status" class="form-select">
